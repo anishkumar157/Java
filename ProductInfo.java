@@ -1,6 +1,6 @@
 public class ProductInfo{
-
-	 static Product[] products = new Product[8];				 			// Creating object array.
+	
+	static Product[] products = new Product[8];				 			// Creating object array.
 
 	public static void main(String[] args) {
 		
@@ -45,20 +45,22 @@ public class ProductInfo{
 			}
 		}	
 
-		deleteProductByName("Mouse");								// Ivoking the Delete Method.
-
-		System.out.println("\n********After delete!!**********\n");
-
-		for(int i = 0; i < products.length; i++){							
-			if(products[i]!=null){											
-				products[i].productDetails();						// Printing the array Data After Deleting							
-			}
+		boolean result = deleteProductByName("Mouse");								// Ivoking the Delete Method.
 		
+		if(result == true){
+			System.out.println("\n********After delete!!**********\n");
 
-
-
-
+			for(int i = 0; i < products.length; i++){							
+				if(products[i]!=null){											
+					products[i].productDetails();						// Printing the array Data After Deleting							
+				}
+			}
+		}
+		else{
+			System.out.println("\n There is No Changes has been Done in array \n");	
+		}
 	}
+	
 
 	public static boolean saveProducts(Product product){
 		for(int i = 0; i < products.length; i++){						// iterating through array
