@@ -1,6 +1,6 @@
 public class ProductInfo{
 
-	 static Product[] products = new Product[8];							// Creating object array.
+	 static Product[] products = new Product[8];				 			// Creating object array.
 
 	public static void main(String[] args) {
 		
@@ -15,7 +15,7 @@ public class ProductInfo{
 
 
 		saveProducts(product1);
-		saveProducts(product2);												// invoking methods for saving the data.
+		saveProducts(product2);									// invoking methods for saving the data.
 		saveProducts(product3);
 		saveProducts(product4);
 		saveProducts(product5);
@@ -23,21 +23,37 @@ public class ProductInfo{
 		saveProducts(product7);
 		saveProducts(product8);	
 
-
-		// for(int i = 0; i < products.length; i++){							// loop used to print the values from the array 
-		// 	if(products[i]!=null){											// checking if the value is availabe; in the array
-		// 		products[i].productDetails();								// invoking the method to display the values in the array by using array index.
-		// 	}
-		// }	
+		
 		System.out.println("\nFinding the Product\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-		Product foundProduct=findByProductNmae("Laptop");
-		Product foundProduct1=findByProductNmae("Earphone");
+		Product foundProduct=findByProductNmae("Laptop");					// Invking the Search Method
+		Product foundProduct1=findByProductNmae("Earphone");					// Invking the Search Method
 		// foundProduct.productDetails();
 		// foundProduct1.productDetails();
 
 		System.out.println("\nUpdating the  Product\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-		updatByName("Laptop", 60000f);
-		updatByName("Earphone", 300f);
+		updatByName("Laptop", 60000f);								// Invking the Updat Method
+		updatByName("Earphone", 300f);								// Invking the Update Method
+
+
+		System.out.println("\nDeleting the  the  Product\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+
+		System.out.println("\n********Before Delete!!**********\n");
+
+		for(int i = 0; i < products.length; i++){							
+			if(products[i]!=null){											
+				products[i].productDetails();						// Printing the array Data Before Deleting							
+			}
+		}	
+
+		deleteProductByName("Mouse");								// Ivoking the Delete Method.
+
+		System.out.println("\n********After delete!!**********\n");
+
+		for(int i = 0; i < products.length; i++){							
+			if(products[i]!=null){											
+				products[i].productDetails();						// Printing the array Data After Deleting							
+			}
+		
 
 
 
@@ -45,11 +61,11 @@ public class ProductInfo{
 	}
 
 	public static boolean saveProducts(Product product){
-		for(int i = 0; i < products.length; i++){							// iterating through array
-			if(products[i] == null){										// checking for blank space
-				products[i] = product;										// storing 
+		for(int i = 0; i < products.length; i++){						// iterating through array
+			if(products[i] == null){							// checking for blank space
+				products[i] = product;							// storing 
 				System.out.println("$Data has been saved$");
-				return true;												// giving result
+				return true;								// giving result
 			}
 		}
 		System.out.println("Sorry data Could not be inserted!!!");
@@ -57,7 +73,7 @@ public class ProductInfo{
 	} 
 
 
-	public static Product findByProductNmae(String productName){
+	public static Product findByProductNmae(String productName){					// Method For Finding Data
 
 		for(int i=0; i<products.length;i++){
 			if(products[i]!=null){
@@ -74,7 +90,7 @@ public class ProductInfo{
 	}
 
 
-	public static boolean updatByName(String name, float price ){
+	public static boolean updatByName(String name, float price ){					//Method for Updating the data
 
 		for(int i=0; i<products.length;i++){
 			if(products[i]!=null){
@@ -92,6 +108,22 @@ public class ProductInfo{
 		}
 		System.out.println("Data not found. Not updated");
 		return false;
+	}
+
+
+	public static boolean deleteProductByName(String name){						// method for  Deleting the Data.
+		for(int i = 0; i < products.length; i++){
+			if(products[i] != null){
+				if(products[i].productName.equals(name)){
+					products[i]=null;
+					System.out.println("Data has been successfuly Deleted");
+					return true;
+				}
+			}
+		}
+		System.out.println("Data not found. Cannot deleted");
+		return false;
+
 	}
 
 }
