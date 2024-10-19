@@ -1,6 +1,6 @@
 public class ProductInfo{
-
-	 static Product[] products = new Product[8];							// Creating object array.
+	
+	static Product[] products = new Product[8];				 			// Creating object array.
 
 	public static void main(String[] args) {
 		
@@ -15,7 +15,7 @@ public class ProductInfo{
 
 
 		saveProducts(product1);
-		saveProducts(product2);												// invoking methods for saving the data.
+		saveProducts(product2);									// invoking methods for saving the data.
 		saveProducts(product3);
 		saveProducts(product4);
 		saveProducts(product5);
@@ -23,26 +23,31 @@ public class ProductInfo{
 		saveProducts(product7);
 		saveProducts(product8);	
 
+<<<<<<< HEAD
 
 		// for(int i = 0; i < products.length; i++){							
 		// 	if(products[i]!=null){											
 		// 		products[i].productDetails();								
 		// 	}
 		// }	
+=======
+		
+>>>>>>> 899f20e0004685ee16a8f2ff2ed1eff464e1d8dc
 		System.out.println("\nFinding the Product\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-		Product foundProduct=findByProductNmae("Laptop");
-		Product foundProduct1=findByProductNmae("Earphone");
+		Product foundProduct=findByProductNmae("Laptop");					// Invking the Search Method
+		Product foundProduct1=findByProductNmae("Earphone");					// Invking the Search Method
 		// foundProduct.productDetails();
 		// foundProduct1.productDetails();
 
 
 
 		System.out.println("\nUpdating the  Product\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-		updatByName("Laptop", 60000f);
-		updatByName("Earphone", 300f);
+		updatByName("Laptop", 60000f);								// Invking the Updat Method
+		updatByName("Earphone", 300f);								// Invking the Update Method
 
 
 		System.out.println("\nDeleting the  the  Product\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+<<<<<<< HEAD
 
 		System.out.println("\n********Before Delete!!**********\n");
 
@@ -72,16 +77,47 @@ public class ProductInfo{
 		}
 
 			
+=======
+>>>>>>> 899f20e0004685ee16a8f2ff2ed1eff464e1d8dc
 
+		System.out.println("\n********Before Delete!!**********\n");
 
+		for(int i = 0; i < products.length; i++){							
+			if(products[i]!=null){											
+				products[i].productDetails();						// Printing the array Data Before Deleting							
+			}
+		}	
+
+		boolean result = deleteProductByName("Mouse");								// Ivoking the Delete Method.
+		
+		if(result == true){
+			System.out.println("\n********After delete!!**********\n");
+
+			for(int i = 0; i < products.length; i++){							
+				if(products[i]!=null){											
+					products[i].productDetails();						// Printing the array Data After Deleting							
+				}
+			}
+		}
+		else{
+			System.out.println("\n There is No Changes has been Done in array \n");	
+		}
 	}
+	
 
+<<<<<<< HEAD
 	public static boolean saveProducts(Product product){					// method for saving the data
 		for(int i = 0; i < products.length; i++){							// iterating through array
 			if(products[i] == null){										// checking for blank space
 				products[i] = product;										// storing 
+=======
+	public static boolean saveProducts(Product product){
+		for(int i = 0; i < products.length; i++){						// iterating through array
+			if(products[i] == null){							// checking for blank space
+				products[i] = product;							// storing 
+>>>>>>> 899f20e0004685ee16a8f2ff2ed1eff464e1d8dc
 				System.out.println("$Data has been saved$");
-				return true;												// giving result
+				return true;								// giving result
 			}
 		}
 		System.out.println("Sorry data Could not be inserted!!!");
@@ -89,7 +125,12 @@ public class ProductInfo{
 	} 
 
 
+<<<<<<< HEAD
 	public static Product findByProductNmae(String name){			// Method for finding the data
+=======
+	public static Product findByProductNmae(String productName){					// Method For Finding Data
+
+>>>>>>> 899f20e0004685ee16a8f2ff2ed1eff464e1d8dc
 		for(int i=0; i<products.length;i++){
 			if(products[i]!=null){
 				if(products[i].productName.equals(name)){
@@ -105,7 +146,12 @@ public class ProductInfo{
 	}
 
 
+<<<<<<< HEAD
 	public static boolean updatByName(String name, float price ){			// Method for Updating the data.
+=======
+	public static boolean updatByName(String name, float price ){					//Method for Updating the data
+
+>>>>>>> 899f20e0004685ee16a8f2ff2ed1eff464e1d8dc
 		for(int i=0; i<products.length;i++){
 			if(products[i]!=null){
 				if(products[i].productName.equals(name)){
@@ -125,7 +171,11 @@ public class ProductInfo{
 	}
 
 
+<<<<<<< HEAD
 	public static boolean deleteProductByName(String name){
+=======
+	public static boolean deleteProductByName(String name){						// method for  Deleting the Data.
+>>>>>>> 899f20e0004685ee16a8f2ff2ed1eff464e1d8dc
 		for(int i = 0; i < products.length; i++){
 			if(products[i] != null){
 				if(products[i].productName.equals(name)){
